@@ -1,0 +1,19 @@
+// Define how alloy receives and routes data
+otelcol.receiver.otlp "default" {
+  // Listen on all interfaces for HTTP to receive data from the apps
+  http {
+    endpoint = "0.0.0.0:4318"
+  }
+
+  // Route data to the following exporters
+  output {
+    logs    = [otelcol.exporter.otlphttp.loki.input]
+  }
+}
+
+// Send to loki
+otelcol.exporter.otlphttp "loki" {
+  client {
+    endpoint = "http://telemetry-loki:3100/otlp"
+  }
+}
