@@ -4,6 +4,8 @@ The repository contains a partial integration of [OddsPapi - B2B Sports Betting 
 
 Documentation about the design can be found [in this design doc](./design.md) but as a design doc it does not contain all the implementation nuances.
 
+> Note: This was a 2 day-ish project so the code can be improved and refined around the nuances of the feed the API provides. It is not meant to be a hardened production ready service but it would not take much to adjust the risk checks and data pipeline.
+
 ## Usage
 
 The program is intended to be run in docker however it requires an API key `ODDS_API_KEY` for the `client` service. Check the [docker compose file](./docker/docker-compose.yml) for more info.
